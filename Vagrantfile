@@ -3,7 +3,7 @@
 
 # Vagrantfile API/syntax version. Don't touch unless you know what you're doing!
 VAGRANTFILE_API_VERSION = "2"
-STORM_VERSION = "storm-0.9.3"
+STORM_VERSION = "apache-storm-0.9.5"
 STORM_ARCHIVE = "#{STORM_VERSION}.zip"
 
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
@@ -12,7 +12,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.hostmanager.enabled = true
 
   if(!File.exist?(STORM_ARCHIVE))
-    `wget -N http://download.nextag.com/apache/storm/apache-storm-0.9.3/apache-storm-0.9.3.zip`
+    `wget -N http://apache.dattatec.com/storm/apache-storm-0.9.5/apache-storm-0.9.5.zip`
   end
 
   config.vm.define "zookeeper" do |zookeeper|
