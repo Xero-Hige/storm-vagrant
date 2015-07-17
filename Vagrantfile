@@ -1,3 +1,4 @@
+
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
@@ -16,14 +17,14 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "zookeeper" do |zookeeper|
-    zookeeper.vm.box = "precise64"
+    zookeeper.vm.box = "debian/jessie64"
     zookeeper.vm.network "private_network", ip: "192.168.50.3"
     zookeeper.vm.hostname = "zookeeper"
     zookeeper.vm.provision "shell", path: "install-zookeeper.sh"
   end
 
   config.vm.define "nimbus" do |nimbus|
-    nimbus.vm.box = "precise64"
+    nimbus.vm.box = "debian/jessie64"
     nimbus.vm.network "private_network", ip: "192.168.50.4"
     nimbus.vm.hostname = "nimbus"
 
@@ -39,7 +40,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "supervisor1" do |supervisor|
-    supervisor.vm.box = "precise64"
+    supervisor.vm.box = "debian/jessie64"
     supervisor.vm.network "private_network", ip: "192.168.50.5"
     supervisor.vm.hostname = "supervisor1"
 
@@ -54,7 +55,7 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   end
 
   config.vm.define "supervisor2" do |supervisor|
-    supervisor.vm.box = "precise64"
+    supervisor.vm.box = "debian/jessie64"
     supervisor.vm.network "private_network", ip: "192.168.50.6"
     supervisor.vm.hostname = "supervisor2"
 
@@ -73,10 +74,10 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # options are documented and commented below. For a complete reference,
   # please see the online documentation at vagrantup.com.
 
-  # Every Vagrant virtual environment requires a box to build off of.
-  #config.vm.box = "precise32"
+  #Every Vagrant virtual environment requires a box to build off of.
+  config.vm.box = "debian/jessie64"
 
-  # The url from where the 'config.vm.box' box will be fetched if it
+  #The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
   #config.vm.box_url = "http://files.vagrantup.com/precise32.box"
 
